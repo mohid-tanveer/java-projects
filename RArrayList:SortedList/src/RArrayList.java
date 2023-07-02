@@ -184,7 +184,7 @@ public class RArrayList<E> implements RList<E> {
         newlist.expandToCapacity((endPos - startPos) + 1);
 
         // Assigns the sliced indexs from the original array to the new array.
-        for (int x = startPos, y = 0; x <= endPos && y <= (endPos - startPos); x++, y++) {
+        for (int x = startPos, y = 0; x < endPos && y <= (endPos - startPos); x++, y++) {
             newlist.data[y] = data[x];
             newlist.size++;
         }
@@ -208,7 +208,7 @@ public class RArrayList<E> implements RList<E> {
         int origSize = size;
 
         // Sets the removed indexes of the array to null.
-        for (int x = startPos; x <= endPos; x++) {
+        for (int x = startPos; x < endPos; x++) {
             data[x] = null;
             size--;
         }
