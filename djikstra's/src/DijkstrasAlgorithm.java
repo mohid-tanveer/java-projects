@@ -4,10 +4,11 @@ import java.util.*;
 public class DijkstrasAlgorithm {
     public static void main(String[] args)
     {
-        Scanner scan = new Scanner(System.in);
-        System.out.print("What file do you want to read? ");
-        String filename = scan.nextLine();
-        processFile(filename);
+        try (Scanner scan = new Scanner(System.in)) {
+            System.out.print("What file do you want to read? ");
+            String filename = scan.nextLine();
+            processFile(filename);
+        }
     }
 
     public static void dijkstra(Graph g, String start, String finish)

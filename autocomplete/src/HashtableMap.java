@@ -8,6 +8,8 @@ import java.util.Set;
  * The user may set the starting size of the hash table, which never changes.
  */
 public class HashtableMap<K, V> {
+    
+    private int size = 0;
 
     // The hash table, an ArrayList of LinkedLists of KVPair objects.
     private final ArrayList<LinkedList<KVPair>> table;
@@ -32,24 +34,20 @@ public class HashtableMap<K, V> {
     public void put(K newKey, V newValue) {
         // This is the index you should use to insert the key-value pair.
         int hashIndex = Math.abs(newKey.hashCode() % table.size());
-        // Create a boolean that will see if the key is already in the hash table
-        boolean keyExists = false;
         // Iterate through the linked list at the index to see if the key is in the hash table
-        
         for (KVPair pair : table.get(hashIndex)) {
-            // If key is encountered switch the value and set keyExists to true.
+            // If key is encountered switch the value and return.
             if (pair.key.equals(newKey)) {
                 pair.value = newValue;
-                keyExists = true;
+                return;
             }
         }
         // If the key is not in the hash table create a new KVPair and add it to the beginning of the LinkedList.
-        if (keyExists == false) {
-            KVPair pair = new KVPair();
-            pair.key = newKey;
-            pair.value = newValue;
-            table.get(hashIndex).addFirst(pair);
-        }
+        KVPair pair = new KVPair();
+        pair.key = newKey;
+        pair.value = newValue;
+        size++;
+        table.get(hashIndex).addFirst(pair);
     }
 
     /**
@@ -122,17 +120,7 @@ public class HashtableMap<K, V> {
     /**
      * Returns the total number of key-value pairs stored in the hash table.
      */
-    public int size() {
-        int size = 0;
-        // Iterate through the linked lists in the arrayList
-        for (LinkedList<KVPair> list : table) {
-            // Iterate through the KVPairs in the linked lists and increment size as you go.
-            for (KVPair pair : list) {
-                size++;
-            }
-        }
-        return size;
-    }
+    public int size() {return size;}
 
     /**
      * Turns the hash table into a Set of all the keys in the table (values are ignored).

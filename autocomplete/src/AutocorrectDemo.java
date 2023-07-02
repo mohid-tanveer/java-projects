@@ -5,52 +5,59 @@ public class AutocorrectDemo {
 
     public static void main(String[] args)
     {
-        Scanner scan = new Scanner(System.in);
-        System.out.print("Enter filename of text to read: ");
-        String filename = scan.nextLine();
-        System.out.print("Enter size of hash table: ");
-        int size = Integer.parseInt(scan.nextLine());
+        try (Scanner scan = new Scanner(System.in)) {
+            System.out.print("Enter filename of text to read: ");
+            String filename = scan.nextLine();
+            System.out.print("Enter size of hash table: ");
+            int size = Integer.parseInt(scan.nextLine());
 
-        HashtableMap<String, Integer> wordFreqs = processFile(filename, size);
-        System.out.println("Entries in table: " + wordFreqs.size());
-        wordFreqs.printTable();
+            HashtableMap<String, Integer> wordFreqs = processFile(filename, size);
+            System.out.println("Entries in table: " + wordFreqs.size());
+            wordFreqs.printTable();
 
-        Autocorrector autocorrector = new Autocorrector(wordFreqs);
-        //testAutocorrect(autocorrector);
-        AutocorrectFrame frame = new AutocorrectFrame(autocorrector);
-        frame.setVisible(true);
+            Autocorrector autocorrector = new Autocorrector(wordFreqs);
+            //testAutocorrect(autocorrector);
+            AutocorrectFrame frame = new AutocorrectFrame(autocorrector);
+            frame.setVisible(true);
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void mainTest(String[] args)
     {
-        Scanner scan = new Scanner(System.in);
-        System.out.print("Enter filename of text to read: ");
-        String filename = scan.nextLine();
-        System.out.print("Enter size of hash table: ");
-        int size = Integer.parseInt(scan.nextLine());
+        try (Scanner scan = new Scanner(System.in)) {
+            System.out.print("Enter filename of text to read: ");
+            String filename = scan.nextLine();
+            System.out.print("Enter size of hash table: ");
+            int size = Integer.parseInt(scan.nextLine());
 
-        HashtableMap<String, Integer> wordFreqs = processFile(filename, size);
-        System.out.println("Entries in table: " + wordFreqs.size());
-        wordFreqs.printTable();
+            HashtableMap<String, Integer> wordFreqs = processFile(filename, size);
+            System.out.println("Entries in table: " + wordFreqs.size());
+            wordFreqs.printTable();
 
-        Autocorrector autocorrector = new Autocorrector(wordFreqs);
-        testAutocorrect(autocorrector);
+            Autocorrector autocorrector = new Autocorrector(wordFreqs);
+            testAutocorrect(autocorrector);
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void testAutocorrect(Autocorrector autocorrector)
     {
-        Scanner scan = new Scanner(System.in);
-        String word;
-        while (true) {
-            System.out.print("\nEnter a word, or 'stop' to end: ");
-            word = scan.nextLine();
-            if (word.equals("stop"))
-                break;
-            System.out.println("Autocomplete: " + autocorrector.getBestAutocomplete(word));
-            System.out.println("Autocorrect (order might be different):");
-            System.out.println("  " + autocorrector.getBestAutocorrect(word));
-            System.out.println("Best suggestions (order should match):");
-            System.out.println("  " + autocorrector.getBestSuggestions(word));
+        try (Scanner scan = new Scanner(System.in)) {
+            String word;
+            while (true) {
+                System.out.print("\nEnter a word, or 'stop' to end: ");
+                word = scan.nextLine();
+                if (word.equals("stop"))
+                    break;
+                System.out.println("Autocomplete: " + autocorrector.getBestAutocomplete(word));
+                System.out.println("Autocorrect (order might be different):");
+                System.out.println("  " + autocorrector.getBestAutocorrect(word));
+                System.out.println("Best suggestions (order should match):");
+                System.out.println("  " + autocorrector.getBestSuggestions(word));
+            }
         }
     }
 
