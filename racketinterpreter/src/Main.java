@@ -1,4 +1,4 @@
-package jracket;
+package src;
 
 public class Main {
 

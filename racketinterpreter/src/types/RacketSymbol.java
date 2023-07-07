@@ -1,6 +1,6 @@
-package jracket.types;
+package src.types;
 
-import jracket.Frame;
+import src.Frame;
 
 /**
  * A RacketSymbol is a symbol in Racket.  

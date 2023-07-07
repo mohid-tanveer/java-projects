@@ -1,4 +1,4 @@
-package jracket;
+package src;
 
 /**
  * A jracket.ParsingException is thrown whenever the parser detects an error in

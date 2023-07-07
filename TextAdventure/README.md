@@ -7,11 +7,11 @@ Skills associated with this project are:
 * be able to use objects more concisely to write complex programs.
 * implement simple classes of objects.
 
-# overview
+## overview
 
 The structure of the project is as follows:
 
-```
+```text
 TextAdventure
 |-- README.md               -- this file
 `-- src          

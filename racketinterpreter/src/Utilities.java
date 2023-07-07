@@ -1,10 +1,10 @@
-package jracket;
-
-import jracket.types.RacketExpression;
-import jracket.types.RacketList;
+package src;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import src.types.RacketExpression;
+import src.types.RacketList;
 
 public class Utilities {
 

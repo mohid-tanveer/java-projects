@@ -8,11 +8,11 @@ Skills associated with this project are:
 * Implementing algorithms from pseudocode.
 * Using algorithms for practical use.
 
-# overview
+## overview
 
 The structure of the project is as follows:
 
-```
+```text
 autocomplete
 |-- README.md                      -- this file
 `-- src          

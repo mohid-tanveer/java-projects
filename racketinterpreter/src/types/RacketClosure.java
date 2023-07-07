@@ -1,8 +1,8 @@
-package jracket.types;
+package src.types;
 
-import jracket.Frame;
-import jracket.Interpreter;
-import jracket.Utilities;
+import src.Frame;
+import src.Interpreter;
+import src.Utilities;
 
 import java.util.Collections;
 import java.util.List;

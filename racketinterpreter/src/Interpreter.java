@@ -1,11 +1,11 @@
-package jracket;
-
-import jracket.types.RacketExpression;
-import jracket.types.RacketPrimitiveFunction;
-import jracket.types.RacketSymbol;
+package src;
 
 import java.util.List;
 import java.util.Scanner;
+
+import src.types.RacketExpression;
+import src.types.RacketPrimitiveFunction;
+import src.types.RacketSymbol;
 
 /**
  * An jracket.Interpreter runs a read-eval-print loop for a subset of the Racket
@@ -34,46 +34,47 @@ public class Interpreter {
      * Start the interpreter's read-eval-print loop.
      */
     public void run() {
-        Scanner scan = new Scanner(System.in);
-        String inputLine;
+        try (Scanner scan = new Scanner(System.in)) {
+            String inputLine;
 
-        System.out.println("Welcome to JRacket!  Type \"end\" to stop the interpreter.");
+            System.out.println("Welcome to JRacket!  Type \"end\" to stop the interpreter.");
 
-        while (true) {
+            while (true) {
 
-            System.out.print(">>> ");
-            if (scan.hasNextLine()) {
-                inputLine = scan.nextLine();
+                System.out.print(">>> ");
+                if (scan.hasNextLine()) {
+                    inputLine = scan.nextLine();
 
-                while (insideParentheses(inputLine)) {
-                    System.out.print("  > ");
-                    if (scan.hasNextLine()) {
-                        inputLine += scan.nextLine();
-                    } else {
-                        break;
+                    while (insideParentheses(inputLine)) {
+                        System.out.print("  > ");
+                        if (scan.hasNextLine()) {
+                            inputLine += scan.nextLine();
+                        } else {
+                            break;
+                        }
                     }
+                } else {
+                    break;  // end of file
                 }
-            } else {
-                break;  // end of file
-            }
 
-            if (inputLine.equals("end")) {
-                break;
-            }
-
-            try {
-                List<RacketExpression> expressions = Parser.parse(inputLine);
-
-                for (RacketExpression expr : expressions) {
-                    RacketExpression value = expr.eval(globalFrame);
-                    System.out.println("==> " + value);
+                if (inputLine.equals("end")) {
+                    break;
                 }
-            } catch (ParsingException e) {
-                System.out.println(e);
-            } catch (InterpreterException e) {
-                System.out.println(e);
-            }
 
+                try {
+                    List<RacketExpression> expressions = Parser.parse(inputLine);
+
+                    for (RacketExpression expr : expressions) {
+                        RacketExpression value = expr.eval(globalFrame);
+                        System.out.println("==> " + value);
+                    }
+                } catch (ParsingException e) {
+                    System.out.println(e);
+                } catch (InterpreterException e) {
+                    System.out.println(e);
+                }
+
+            }
         }
         System.out.println();
     }

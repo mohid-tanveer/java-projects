@@ -1,6 +1,6 @@
-package jracket.types;
+package src.types;
 
-import jracket.Frame;
+import src.Frame;
 
 /**
  * A RacketExpression is the superclass from which all possible
@@ -26,7 +26,7 @@ public abstract class RacketExpression {
     public abstract String toDetailedString();
 
     public void printDebuggingString() {
-        if (jracket.Interpreter.DEBUGGING) {
+        if (src.Interpreter.DEBUGGING) {
             System.out.println("      Evaluating: " + this);
         }
     }

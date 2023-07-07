@@ -1,0 +1,10 @@
+{
+    "java.project.sourcePaths": [
+        "StockReport/src",
+        "autocomplete/src",
+        "djikstra's/src",
+        "racketinterpreter",
+        "SentimentAnalysis/src",
+        "TextAdventure/src"
+    ]
+}

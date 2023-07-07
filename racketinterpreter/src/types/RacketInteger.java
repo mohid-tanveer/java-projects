@@ -1,7 +1,7 @@
-package jracket.types;
+package src.types;
 
 
-import jracket.Frame;
+import src.Frame;
 
 /**
  * A RacketInteger is the integer data type in Racket.

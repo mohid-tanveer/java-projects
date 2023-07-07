@@ -17,21 +17,22 @@ Skills associated with this project are:
 * Understanding how to implement different syntaxes for a language.
 * Implementing nested function calls and interpreting them.
 
-# overview
+## overview
 
 The structure of the project is as follows:
 
 ```
 racket interpreter
-|-- types                       -- datatypes for racket
-|-- README.md                   -- this file         
-|-- Frame.java                  -- frame object file
-|-- Interpreter.java            -- interpreter object file 
-|-- InterpreterException.java   -- throw exceptions for interpreter
-|-- Main.java                   -- runs interpreter
-|-- Parser.java                 -- parses string to racket expression
-|-- ParsingException.java       -- throw exceptions for parser
-|-- Utilities.java              -- utility file
+|-- README.md                       -- this file  
+`-- src                             -- source file
+    |-- types                       -- datatypes for racket       
+    |-- Frame.java                  -- frame object file
+    |-- Interpreter.java            -- interpreter object file 
+    |-- InterpreterException.java   -- throw exceptions for interpreter
+    |-- Main.java                   -- runs interpreter
+    |-- Parser.java                 -- parses string to racket expression
+    |-- ParsingException.java       -- throw exceptions for parser
+    |-- Utilities.java              -- utility file
 ```
 
 The source code for the project is in the `src` directory.

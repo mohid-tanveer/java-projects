@@ -8,13 +8,18 @@ Skills associated with this project are:
 * scan through files and isolate necessary data.
 * using data from a map in order to find the sentiment of statements.
 
-# overview
+## sample interaction
+
+[Here](example.md) is a sample interaction with the program.
+
+## overview
 
 The structure of the project is as follows:
 
-```
+```text
 Sentiment Analysis
 |-- README.md                   -- this file
+|-- example.md                  -- sample interaction
 `-- src          
     |-- BSTMap.java             -- datatype file
     |-- reviews-big.txt         -- text file with reviews

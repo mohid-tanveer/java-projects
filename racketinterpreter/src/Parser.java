@@ -1,11 +1,11 @@
-package jracket;
-
-import jracket.types.RacketBoolean;
-import jracket.types.RacketExpression;
-import jracket.types.RacketInteger;
-import jracket.types.RacketSymbol;
+package src;
 
 import java.util.*;
+
+import src.types.RacketBoolean;
+import src.types.RacketExpression;
+import src.types.RacketInteger;
+import src.types.RacketSymbol;
 
 /**
  * A jracket.Parser turns a String of Racket code into an equivalent RacketExpression.

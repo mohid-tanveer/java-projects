@@ -1,7 +1,7 @@
-package jracket.types;
+package src.types;
 
-import jracket.InterpreterException;
-import jracket.Utilities;
+import src.InterpreterException;
+import src.Utilities;
 
 import java.util.Arrays;
 import java.util.List;

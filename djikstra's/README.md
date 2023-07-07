@@ -7,11 +7,11 @@ Skills associated with this project are:
 * Using created datatypes to implement particular algorithms.
 * Implementing algorithms from pseudocode.
 
-# overview
+## overview
 
 The structure of the project is as follows:
 
-```
+```text
 djikstra's
 |-- README.md                         -- this file
 `-- src          

@@ -1,11 +1,11 @@
-package jracket;
-
-import jracket.types.RacketExpression;
-import jracket.types.RacketPrimitiveFunction;
-import jracket.types.RacketSymbol;
+package src;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import src.types.RacketExpression;
+import src.types.RacketPrimitiveFunction;
+import src.types.RacketSymbol;
 
 
 public class Frame {

@@ -1,6 +1,6 @@
-package jracket.types;
+package src.types;
 
-import jracket.Frame;
+import src.Frame;
 
 /**
  * A RacketBoolean is a boolean type in Racket -- either #t or #f.

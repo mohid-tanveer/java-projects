@@ -1,4 +1,4 @@
-package jracket;
+package src;
 
 /**
  * An InterpreterException is thrown for any kind of dynamic error generated
