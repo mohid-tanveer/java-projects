@@ -21,11 +21,13 @@ Skills associated with this project are:
 
 The structure of the project is as follows:
 
-```
+```text
 racket interpreter
-|-- README.md                       -- this file  
-`-- src                             -- source file
-    |-- types                       -- datatypes for racket       
+|-- README.md                       -- this file
+|-- docs                            -- documentation
+    |-- interaction.md              -- sample interaction
+`-- src                             -- source folder
+    |-- types                       -- expression types for racket       
     |-- Frame.java                  -- frame object file
     |-- Interpreter.java            -- interpreter object file 
     |-- InterpreterException.java   -- throw exceptions for interpreter
@@ -34,5 +36,3 @@ racket interpreter
     |-- ParsingException.java       -- throw exceptions for parser
     |-- Utilities.java              -- utility file
 ```
-
-The source code for the project is in the `src` directory.

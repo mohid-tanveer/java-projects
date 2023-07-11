@@ -6,5 +6,8 @@
         "racketinterpreter",
         "SentimentAnalysis/src",
         "TextAdventure/src"
+    ],
+    "cSpell.words": [
+        "racketinterpreter"
     ]
 }

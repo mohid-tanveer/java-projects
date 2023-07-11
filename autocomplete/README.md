@@ -24,5 +24,3 @@ autocomplete
     |-- Autocorrector.java         -- autocorrect program
     |-- HashtableMap.java          -- datatype file
 ```
-
-The source code for the project is in the `src` directory.

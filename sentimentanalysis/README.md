@@ -27,5 +27,3 @@ Sentiment Analysis
     |-- SentimentAnalysis.java  -- sentiment analysis program
     |-- stopwords.txt           -- text file with stopwords  
 ```
-
-The source code for the project is in the `src` directory.

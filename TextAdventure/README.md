@@ -21,5 +21,3 @@ TextAdventure
     |-- Treasure.java       -- object file
     |-- Weapon.java         -- object file
 ```
-
-The source code for the project is in the `src` directory.
